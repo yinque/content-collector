@@ -68,10 +68,27 @@ CREATE TABLE Note (
 ### dao层
 crud笔记模块：dao.note_dao.py
 ### 接口层
+### 响应格式
+```json
+{
+  "success": true,
+  "info": "业务消息",
+  "data": {}
+}
+```
+#### 请求接收
 根路径：/api/v1/  
 笔记crud接口： /notes
 ## 前端
 ### api层
+#### 响应状态码处理：
+判断响应状态码  
+非200：异常，弹出异常请求消息  
+200：正常，继续判断"success"键的值是否正常（为true）  
+false：异常，弹出"info"键的值  
+true：正常，继续业务  
+
+#### 请求发送
 笔记crud api：api.js，使用fetch()
 ### 模型层
 笔记列表对象：
