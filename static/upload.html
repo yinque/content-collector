@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传</title>
+    <link rel="stylesheet" href="layout.css">
+    <script src="_lib/mobile-detect.min.js"></script>
+</head>
+<body>
+<div id="app">
+<!--    <nav>-->
+<!--      <ul>-->
+<!--        <li><a href="#text">文本</a></li>-->
+<!--        <li><a href="#img">图片</a></li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+    <article>
+        <select name="">
+            <option value="text">文本</option>
+            <option value="img">图片</option>
+        </select>
+        <form id="text" action="/" method="post">
+        <input type="hidden" name="type" value="text">
+        <textarea name="content" resi></textarea>
+        <button>提交</button>
+    </form>
+    </article>
+
+    <article>
+        <span>图片</span>
+        <form id="img" action="/" method="post">
+            <input type="file">
+            <button>提交</button>
+        </form>
+    </article>
+
+</div>
+<script src="js/mobile_handler.js"></script>
+</body>
+
+</html>
