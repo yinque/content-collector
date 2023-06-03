@@ -11,22 +11,22 @@ def camel_to_snake(camel_case):
 
 
 # 指定文件路径和表名
-template_name = "curd.pyi"
+template_name = "template/xxx_dao.py"
 # table_name_list = ['User', 'News', 'NewsCategory', 'Comment', 'Message']
 table_name_list = ['Note']
 
 encoding = 'utf-8'
 
 for table_name in table_name_list:
-    snake_name = camel_to_snake(table_name)
-    new_file_name = 'gen/' + snake_name+'_dao.py'
+    snake_case_name = camel_to_snake(table_name)
+    new_file_name = f'generation/{snake_case_name}_dao.py'
 
     with open(template_name, "r", encoding=encoding) as file:
         content = file.read()
-        updated_content = content.replace("TableNameOrigin", table_name).replace("tablename_snackcase", snake_name)
+        updated_content = content.replace("TableNameOrigin", table_name).replace("tablename_snackcase", snake_case_name)
 
     with open(new_file_name, "w",  encoding=encoding) as new_file:
         new_file.write(updated_content)
 
     # 执行替换操作
-    print(f"替换后的文件已保存为: {new_file_name}")
+    print(f"已生成: {new_file_name}")
