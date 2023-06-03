@@ -9,6 +9,17 @@ from controller import note_controller
 
 app = FastAPI()
 
+# 配置CORS中间件
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 允许的跨域源，可以根据需求进行设置，例如 ["http://localhost", "https://example.com"]
+    allow_credentials=True,  # 是否允许发送身份验证信息（cookies、HTTP认证）等
+    allow_methods=["*"],  # 允许的HTTP方法，可以根据需求进行设置，例如 ["GET", "POST", "PUT", "DELETE"]
+    allow_headers=["*"],  # 允许的自定义请求头，可以根据需求进行设置，例如 ["Content-Type", "Authorization"]
+)
+
 app.include_router(note_controller.api)
 
 

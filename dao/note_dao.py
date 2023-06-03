@@ -21,7 +21,7 @@ def get_all_note():
     :return: 所有记录
     """
     with get_cursor() as cursor:
-        sql = "SELECT * FROM Note"
+        sql = "SELECT * FROM Note ORDER BY id DESC"
         cursor.execute(sql)
         rows = cursor.fetchall()
         data = [dict(row) for row in rows]
