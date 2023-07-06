@@ -2,7 +2,7 @@
 
 import YQButton from "../components/YQButton.vue";
 import {onMounted, reactive} from "vue";
-import note_api from "../api/index";
+import {note_api} from "../api/index";
 
 import { useRoute } from 'vue-router';
 import YQTextarea from "../components/YQTextarea.vue";
@@ -41,7 +41,6 @@ function submit(){
   }else{  //新建笔记
     note_api.create_note({...editor,modify_time:currentDate()})
   }
-
 }
 
 </script>

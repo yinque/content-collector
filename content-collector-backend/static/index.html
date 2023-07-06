@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>右键事件示例</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: lightgray;
+    }
+    .context-menu {
+      position: absolute;
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .context-menu li {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="myElement"></div>
+
+  <ul class="context-menu" id="myContextMenu">
+    <li>Delete</li>
+  </ul>
+
+  <script>
+    // 获取 DOM 元素
+    const myElement = document.getElementById('myElement');
+    const myContextMenu = document.getElementById('myContextMenu');
+
+    // 定义右键事件处理函数
+    function handleContextMenu(event) {
+      event.preventDefault(); // 阻止默认右键菜单
+
+      // 设置上下文菜单的位置
+      myContextMenu.style.left = `${event.clientX}px`;
+      myContextMenu.style.top = `${event.clientY}px`;
+
+      // 显示上下文菜单
+      myContextMenu.style.display = 'block';
+    }
+
+    // 绑定右键事件监听器
+    myElement.addEventListener('contextmenu', handleContextMenu);
+
+    // 点击页面其他地方时隐藏上下文菜单
+    document.addEventListener('click', function(event) {
+      myContextMenu.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

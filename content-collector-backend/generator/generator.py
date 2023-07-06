@@ -13,7 +13,7 @@ def camel_to_snake(camel_case):
 # 指定文件路径和表名
 template_name = "template/xxx_dao.py"
 # table_name_list = ['User', 'News', 'NewsCategory', 'Comment', 'Message']
-table_name_list = ['Note']
+table_name_list = ['Conversation']
 
 encoding = 'utf-8'
 

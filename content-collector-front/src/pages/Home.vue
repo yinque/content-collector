@@ -2,7 +2,7 @@
   import Note from "../components/Note.vue";
   import YQButton from "../components/YQButton.vue";
 
-  import note_api from '../api/index'
+  import {note_api} from '../api/index'
   import {onMounted, reactive} from "vue";
 
   const noteList = reactive([])

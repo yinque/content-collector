@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import {defineProps} from "vue";
-
+import {defineProps, defineEmits} from "vue";
+import YQContextMenu from "./YQContextMenu.vue";
+import {note_api} from "../api/index"
 interface Note{
   "id": number,
   "title": string,
@@ -10,15 +11,31 @@ interface Note{
 const props = defineProps<{
   note: Note
 }>()
+
+
+const emit = defineEmits<{
+  delete: [id: number] // 具名元组语法
+  update: [value: string]
+}>()
+
+const contextItem = [{
+  name:"删除",
+  'handler': function (){
+    console.log("delete",props.note.id)
+    // note_api.delete_note(props.note.id)
+    location.reload();
+  }
+}]
 </script>
 <template>
-  <div class="note">
+  <div class="note" ref="noteRef">
       <main>
           <div class="content" @click="$router.push('/edit/'+props.note.id)">{{props.note.content}}</div>
       </main>
       <footer>
           <div class="modify_time">{{props.note.modify_time}}</div>
       </footer>
+      <YQContextMenu :context-item="contextItem"></YQContextMenu>
   </div>
 </template>
 

@@ -1,0 +1,3 @@
+/*
+localStorage操作API
+ */

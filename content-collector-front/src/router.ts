@@ -2,12 +2,14 @@ import {createRouter, createWebHistory} from 'vue-router';
 
 import Home from './pages/Home.vue'
 import NoteEdit from './pages/NoteEdit.vue'
+import Test from './pages/Test.vue'
 
 
 const routes = [
-  { path: '/', component: Home },
-    { path: '/edit', component:NoteEdit },
-  { path: '/edit/:id', component:NoteEdit },
+    {path: '/', component: Home},
+    {path: '/edit', component: NoteEdit},
+    {path: '/edit/:id', component: NoteEdit},
+    {path: '/test', component: Test}
 ]
 
 const router = createRouter({

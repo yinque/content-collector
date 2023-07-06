@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 button{
-  position: absolute;
+  position: fixed;
   bottom: 1em;
   right: 1em;
   font-size: 1.5em;
