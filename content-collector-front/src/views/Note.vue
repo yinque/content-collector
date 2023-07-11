@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {defineProps, defineEmits} from "vue";
-import YQContextMenu from "./YQContextMenu.vue";
-import {note_api} from "../api/index"
+// import YQContextMenu from "./YQContextMenu.vue";
+import {note_api} from "../api"
 interface Note{
   "id": number,
   "title": string,
@@ -35,7 +35,7 @@ const contextItem = [{
       <footer>
           <div class="modify_time">{{props.note.modify_time}}</div>
       </footer>
-      <YQContextMenu :context-item="contextItem"></YQContextMenu>
+<!--      <YQContextMenu :context-item="contextItem"></YQContextMenu>-->
   </div>
 </template>
 

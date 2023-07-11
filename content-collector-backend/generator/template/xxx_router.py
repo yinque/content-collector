@@ -5,7 +5,7 @@
 # from pydantic import BaseModel
 # from fastapi import APIRouter
 # from dao import note_dao
-# from controller.util.response_format import success_message, fail_message
+# from router.util.response_format import success_message, fail_message
 #
 #
 # # 定义笔记模型

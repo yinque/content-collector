@@ -16,13 +16,15 @@ watch(() => props.modelValue, () => {
 })
 </script>
 <template>
-  <textarea
-      ref="textarea"
-      v-bind="$attrs"
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-  >
-  </textarea>
+  <div class="yq-textarea">
+    <textarea
+        ref="textarea"
+        v-bind="$attrs"
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
+    >
+    </textarea>
+  </div>
 </template>
 
 <script>

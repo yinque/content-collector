@@ -10,7 +10,9 @@ const props = defineProps({
 })
 </script>
 <template>
-  <button type="button" :class="props.type"></button>
+  <div class="yq-button">
+    <button type="button" :class="props.type"></button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -40,8 +42,7 @@ button{
  }
 &:hover{
    cursor: pointer;
-   box-shadow: -12px -8px 40px rgba(70,70,70,0.12) inset
-   ,$bs;
+   box-shadow: -12px -8px 40px rgba(70,70,70,0.12) inset, $bs;
  }
 }
 

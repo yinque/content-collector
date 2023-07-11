@@ -5,7 +5,9 @@ from fastapi.responses import RedirectResponse
 from fastapi import Request
 
 from dao import note_dao
-from controller import note_controller
+from router._index_router import root
+
+from module.config_module import config
 
 app = FastAPI()
 
@@ -20,7 +22,7 @@ app.add_middleware(
     allow_headers=["*"],  # 允许的自定义请求头，可以根据需求进行设置，例如 ["Content-Type", "Authorization"]
 )
 
-app.include_router(note_controller.api)
+app.include_router(root)
 
 
 # 重定向"/index.html"到"/"

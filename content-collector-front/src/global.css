@@ -24,6 +24,20 @@ h2{
     width: 50px;
     height: 50px;
 }
+.big{
+    width: 800px;
+    height: 800px;
+}
+.mid{
+    width: 400px;
+    height: 400px;
+}
 .red{
     background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow {
+    background-color: rgb(255, 213, 59);
 }

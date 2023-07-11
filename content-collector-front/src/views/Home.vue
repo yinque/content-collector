@@ -1,5 +1,5 @@
 <script setup>
-  import Note from "../components/Note.vue";
+  import Note from "./Note.vue";
   import YQButton from "../components/YQButton.vue";
 
   import {note_api} from '../api/index'

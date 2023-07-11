@@ -1,8 +1,16 @@
 import axios from 'axios';
 
 // Add a request interceptor
-axios.interceptors.request.use(function (config) {
+axios.interceptors.request.use(async function (config) {
     // Do something before request is sent
+
+    // 慢加载测试
+    await (async (delay)=>{
+        return  new Promise((resolve)=>{
+            setTimeout(resolve,delay)
+        })
+    })(200)
+
     return config;
 }, function (error) {
     // Do something with request error
@@ -18,8 +26,8 @@ axios.interceptors.response.use(function (response) {
     return Promise.reject(error);
 });
 
-// axios.defaults.baseURL = 'http://127.0.0.1:5000/api/v1'; // 设置基本 URL
-axios.defaults.baseURL = 'http://127.0.0.1:5000/'; // 设置基本 URL
+axios.defaults.baseURL = 'http://127.0.0.1:5000/api/v1'; // 设置基本 URL
+// axios.defaults.baseURL = 'http://127.0.0.1:5000/'; // 设置基本 URL
 
 
 interface NoteCreate {

@@ -1,14 +1,12 @@
 <script setup>
 // 测试页面
-
+import YQListTest from "../components/YQList/YQListTest.vue";
 </script>
 
 <template>
   <div class="test">
     Test
-    <div class="red block">
-
-    </div>
+    <YQListTest></YQListTest>
   </div>
 </template>
 

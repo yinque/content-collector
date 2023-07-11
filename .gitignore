@@ -1,2 +1,3 @@
 .idea/
 content-collector-backend/database.db
+content-collector-backend/config.json
